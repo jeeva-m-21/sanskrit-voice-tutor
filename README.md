@@ -38,8 +38,8 @@
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/jeeva-m-21/vac-sanskrit-ai.git
-cd vac-sanskrit-ai
+git clone https://github.com/jeeva-m-21/sanskrit-voice-tutor.git
+cd sanskrit-voice-tutor
 ```
 
 ### 2. Install dependencies
