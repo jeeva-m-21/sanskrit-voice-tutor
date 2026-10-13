@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Claude-inspired warm dark aesthetic */
+  --background: #141413;
+  --foreground: #ecebe8;
+  --muted: #9c9a92;
+  --muted-light: #c2c0b8;
+  
+  --sidebar-bg: #0f0f0e;
+  --card-bg: #1c1c1a;
+  --card-hover: #232320;
+  --card-active: #282824;
+  
+  --border-subtle: #262623;
+  --border-medium: #33332d;
+  --border-strong: #45453e;
+  
+  /* Claude signature warm terracotta coral */
+  --claude-accent: #d97757;
+  --claude-accent-hover: #e38769;
+  --claude-accent-muted: rgba(217, 119, 87, 0.15);
+  --claude-accent-border: rgba(217, 119, 87, 0.35);
+  
+  /* Sacred Sanskrit golden warmth */
+  --sanskrit-gold: #e5ab55;
+  --sanskrit-gold-muted: rgba(229, 171, 85, 0.12);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-geist-sans), var(--font-noto-devanagari), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-serif-claude), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-geist-mono), monospace;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle, refined scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a26;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3e3e37;
+}
+
+/* Devanagari text enhancement */
+.deva-text {
+  font-family: var(--font-noto-devanagari), var(--font-sans);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+/* Subtle selection color */
+::selection {
+  background: rgba(217, 119, 87, 0.28);
+  color: #fff;
 }
